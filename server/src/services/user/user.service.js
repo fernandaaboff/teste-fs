@@ -9,8 +9,14 @@ module.exports = function (app) {
     paginate: app.get('paginate')
   };
 
+  const user =  new User(options, app);
   // Initialize our service with any options it requires
-  app.use('/user', new User(options, app));
+  app.use('/user', user);
+  app.use('/users', (req, res) => {
+    user.find({ query: req.query }).then(data => {
+      res.json(data);
+    });
+  });
 
   // Get our initialized service so that we can register hooks
   const service = app.service('user');
