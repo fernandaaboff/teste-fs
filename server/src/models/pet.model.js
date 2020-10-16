@@ -1,17 +1,14 @@
-// user-model.js - A mongoose model
+// pet-model.js - A mongoose model
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 module.exports = function (app) {
-  const modelName = 'user';
+  const modelName = 'pet';
   const mongooseClient = app.get('mongooseClient');
-  const schema = new mongooseClient.Schema({
-    email: { type: String, unique: true, lowercase: true },
-    nome: { type: String, lowercase: true },
-    password: { type: String },
-    pets: [
-      { type: mongooseClient.Schema.Types.ObjectId, ref: 'pet' }
-    ]
+  const { Schema } = mongooseClient;
+  const schema = new Schema({
+    nome: { type: String, required: true },
+    userId: { type: Schema.Types.ObjectId, ref: 'user' }
   }, {
     timestamps: true
   });
