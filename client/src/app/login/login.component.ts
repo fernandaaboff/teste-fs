@@ -12,10 +12,11 @@ export class LoginComponent {
 
   constructor(private feathersService: FeathersService, private router: Router) { }
 
-  login(event, email, senha) {
-    event.preventDefault();
+  login(email, senha) {
+    if(event) {
+      event.preventDefault();
+    }
     this.mensagens = [];
-    console.log(event);
     if (!email || !senha) {
       this.mensagens.push("Preencha os dados");
       return;
@@ -23,6 +24,25 @@ export class LoginComponent {
     this.feathersService.authenticate(email, senha)
     .then(res => {
       this.router.navigate(['/users']);
+    })
+    .catch(erro => {
+      this.mensagens.push(erro.message);
+    });
+  }
+
+  cadastrar(email, senha) {
+    this.mensagens = [];
+    if (!email || !senha) {
+      this.mensagens.push("Preencha os dados");
+      return;
+    }
+    this.feathersService.service('user')
+    .create({
+      "email": email,
+      "password": senha
+    })
+    .then(res => {
+      return this.login(email, senha);
     })
     .catch(erro => {
       this.mensagens.push(erro.message);
