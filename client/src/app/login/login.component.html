@@ -1,14 +1,13 @@
-<style>
+<section>
+  <h1>Seja bem vindo ao teste da Fernanda</h1>
 
-   form {
-      border: #333 1px solid;
-   }
-</style>
-
-<p>login works!</p>
-
-<form action="">
-   <input type="email" name="" id="">
-   <input type="password" name="" id="">
-   <button type="submit"></button>
-</form>
+  <form action="" method="POST">
+    <input #email type="email" name="email" placeholder="Email">
+    <input #senha type="password" name="senha" placeholder="Senha">
+    <input type="submit" class="btn entrar" value="Entrar" (click)="login($event, email.value, senha.value)">
+    <input type="button" class="btn cadastrar" value="Cadastrar" (click)="cadastrar(email.value, senha.value)">
+  </form>
+  <ul>
+    <li *ngFor="let mensagem of mensagens">{{mensagem}}</li>
+  </ul>
+</section>

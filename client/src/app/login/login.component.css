@@ -1,0 +1,54 @@
+section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  min-height: 100vh;
+  background-color: #fff;
+  text-align: center;
+}
+
+form {
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 300px;
+  background-color: #85bee4;
+}
+
+input {
+  display: block;
+  margin: 1em auto;
+  padding: .3em .6em;
+  width: 90%;
+  border: none;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 100px;
+  width: 45%;
+  cursor: pointer;
+}
+
+.entrar {
+  background-color: #7c9fd4;
+}
+
+.entrar:hover,
+.cadastrar:hover {
+  color: #fff;
+  background-color: #4670a1;
+}
+
+ul {
+  margin: 1em 0;
+  list-style: none;
+  color: #fff;
+  background-color: #d12222;
+}
+
+ul li {
+  margin: 0;
+  padding: 1em .6em;
+}

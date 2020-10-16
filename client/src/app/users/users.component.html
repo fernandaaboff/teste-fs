@@ -1,0 +1,8 @@
+<h2>Usuários</h2>
+<ul>
+  <li *ngFor="let user of users ">
+    <p>Nome: {{user.nome}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Cadastrado em {{new Date(user.createdAt)}}</p>
+  </li>
+</ul>

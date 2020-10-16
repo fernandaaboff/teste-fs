@@ -1,0 +1,15 @@
+ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border: #ddd 1px solid;
+}
+
+li {
+  margin: 0;
+  padding: 1em;
+}
+
+li:nth-child(2n) {
+  background-color: #ddd;
+}
