@@ -1,8 +1,19 @@
-<h2>Usuários</h2>
+<h2>Donos cadastrados</h2>
 <ul>
-  <li *ngFor="let user of users ">
-    <p>Nome: {{user.nome}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Cadastrado em {{new Date(user.createdAt)}}</p>
+  <li *ngFor="let user of users">
+    <p class="metade"><span class="destaque">Nome:</span>{{user.nome}}</p>
+    <p class="metade"><span class="destaque">Contato:</span>{{user.email}}</p>
+    <p class="extra">Cadastrado em {{user.createdAt | date:'dd/MM/yyyy'}}</p>
+    <div class="pets">
+      <p class="titulo destaque">Animais</p>
+      <div class="btn" (click)="getPets(user)">
+        Buscar
+      </div>
+      <ul>
+        <li *ngFor="let pet of user.pets">
+          {{pet.nome}}
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>

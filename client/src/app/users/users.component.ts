@@ -16,7 +16,19 @@ export class UsersComponent {
       res.data.forEach(element => {
         this.users.push(element);
       });
-    })
+    });
+  }
+
+  getPets(user) {
+    if(!user.pets) {
+      user.pets = [];
+      this.dataService.getUserPets(user._id)
+      .then(res => {
+        res.data.forEach(element => {
+          user.pets.push(element);
+        });
+      });
+    }
   }
 
 }

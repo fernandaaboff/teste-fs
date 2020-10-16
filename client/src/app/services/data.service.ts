@@ -14,4 +14,14 @@ export class DataService {
         paginate: false
       });
   }
+
+  public getUserPets(id) {
+    return this.feathersService.service('pet')
+      .find({
+        paginate: false,
+        query: {
+          userId: id
+        }
+      });
+  }
 }

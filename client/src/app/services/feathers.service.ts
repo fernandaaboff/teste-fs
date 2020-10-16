@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import feathers from '@feathersjs/feathers';
 import rest from '@feathersjs/rest-client';
 
-// Connect to the `http://feathers-api.com/messages` service
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -31,8 +28,6 @@ export class FeathersService {
       strategy: 'local',
       email: email,
       password: senha
-    }).then(() => {
-      this.feathersApp.service('user').find().then(res=>{console.log(res)});
     }).catch(erro => {
       if (erro.code === 403) {
         throw new Error("Login inválido");
