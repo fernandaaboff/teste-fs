@@ -1,0 +1,88 @@
+section {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+fieldset,
+.pet {
+  margin: 0 auto;
+  padding: 0 .6em;
+  width: 90%;
+  border: none;
+}
+
+input {
+  display: block;
+  margin: .5em 0;
+  padding: .6em 0;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: #333 1px solid;
+}
+
+button,
+.btn {
+  display: inline-block;
+  padding: .6em;
+  min-width: 80px;
+  background-color: #ddd;
+  border: #ddd 1px solid;
+  cursor: pointer;
+}
+
+form .btn {
+  margin-left: 1.2em;
+  width: 45%;
+}
+
+.titulo {
+  position: relative;
+}
+
+.titulo button {
+  position: absolute;
+  right: 1em;
+  top: 0;
+}
+
+.pets {
+  margin-top: 3em;
+}
+
+.pet input {
+  display: inline-block;
+}
+
+.pet button,
+.pet input {
+  margin: .5em .5em 0 0;
+}
+
+.btns {
+  text-align: center;
+}
+
+.salvar {
+  background-color: #eee;
+  color: #00701a;
+  border-color: #00701a;
+}
+
+.cancelar {
+  background-color: #eee;
+  color: #d50000;
+  border-color: #d50000;
+}
+
+.inserir {
+  color: #fff;
+  background-color: #00701a;
+  border-color: #00701a;
+}
+
+.excluir {
+  color: #fff;
+  background-color: #d50000;
+  border-color: #d50000;
+}

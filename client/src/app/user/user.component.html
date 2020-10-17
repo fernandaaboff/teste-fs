@@ -1,0 +1,35 @@
+<section>
+  <div class="titulo">
+    <h2>Dados pessoais</h2>
+    <button class="excluir" (click)="excluirUser()">Excluir usuário</button>
+  </div>
+  <form [formGroup]="userForm" (ngSubmit)="salvar(userForm.value)">
+    <fieldset>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" placeholder="Nome"  formControlName="nome">
+    </fieldset>
+    <fieldset>
+      <label for="email">E-mail (acesso à plataforma)</label>
+      <input type="email" name="email" placeholder="Email" formControlName="email">
+    </fieldset>
+    <input type="submit" class="btn metade salvar" value="Salvar">
+    <input type="button" class="btn metade cancelar" value="Cancelar" (click)="restaurarUser()">
+  </form>
+  <div class="pets">
+    <div class="titulo">
+      <h2>Pets</h2>
+      <button type="button" class="inserir" (click)="newPet()">Novo pet</button>
+    </div>
+    <div *ngFor="let pet of pets" class="pet">
+      <input #inputPet type="text" name="nome" placeholder="Nome" value="{{ pet.nome }}">
+      <div class="btns">
+        <button class="salvar" (click)="salvarPet(pet, inputPet.value)">Salvar</button>
+        <button class="cancelar" (click)="inputPet.value = pet.nome">Cancelar</button>
+        <button class="excluir" (click)="excluirPet(pet)">Excluir</button>
+      </div>
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let mensagem of mensagens">{{mensagem}}</li>
+  </ul>
+</section>
