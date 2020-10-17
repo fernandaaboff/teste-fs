@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let user of users">
-  <a routerLink="/user/{{user._id}}" routerLinkActive="active">Editar</a>
+    <a class="btn edicao" routerLink="/user/{{user._id}}" routerLinkActive="active">Editar</a>
     <p class="metade"><span class="destaque">Nome:</span>{{user.nome}}</p>
     <p class="metade"><span class="destaque">Contato:</span>{{user.email}}</p>
     <p class="extra">Cadastrado em {{user.createdAt | date:'dd/MM/yyyy'}}</p>
